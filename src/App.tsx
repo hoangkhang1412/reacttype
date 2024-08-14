@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Button } from "antd";
+import "./App.css";
 
-function App() {
+// let name: string;
+// // Union type su dung | co the su dung 1 trong 2
+// let age: number | string;
+// let isStudent: boolean;
+// let hobbies: string[]; // array chua nhieu ten trong 1 bien
+// let role: [number, string];
+
+// type Person = {
+//   name: string;
+//   age?: number;
+//   // ? dung de trong cho do
+// };
+// //Object chua nhieu truong
+// let person: Person = {
+//   name: "name",
+// };
+
+// let lotsOfPeople: Person[];
+
+// function printName(name: string) {
+//   console.log(name);
+// }
+
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <span className="heading">Heading</span>
     </div>
   );
-}
+};
 
 export default App;
