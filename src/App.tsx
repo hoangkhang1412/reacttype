@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "antd";
 import "./App.css";
+import InputFeild from "./components/InputFeild";
+import { Todo } from "./model";
+import ToDoList from "./components/ToDoList";
 
 // let name: string;
 // // Union type su dung | co the su dung 1 trong 2
@@ -26,9 +29,29 @@ import "./App.css";
 // }
 
 const App: React.FC = () => {
+  const [todo, setTodo] = useState<string>("");
+
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (todo) {
+      setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
+      setTodo("");
+    }
+  };
+  console.log(todos);
+
   return (
     <div className="App">
-      <span className="heading">Heading</span>
+      <span className="Heading">Heading</span>
+      <InputFeild
+        todo={todo}
+        setTodo={setTodo}
+        handleAdd={handleAdd}
+      ></InputFeild>
+      <ToDoList todos={todos} setTodos={setTodos}></ToDoList>
     </div>
   );
 };
